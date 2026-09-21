@@ -1,189 +1,243 @@
 # Cisco Secure Email Encryption Service (CRES) - User Guide
-
-A comprehensive guide for users to understand how to read and access encrypted emails using Cisco's CRES system.
-
-## 📋 Contents
-
-This repository contains complete user documentation for CRES with the following files:
-
-### Documentation Files
-
-1. **CRES_USER_GUIDE.html** ⭐ **START HERE**
-   - Beautiful, interactive HTML guide
-   - Professional styling with color-coded sections
-   - Easy to read and navigate
-   - Includes security reminders and FAQs
-   - Open in any web browser
-
-2. **CRES_USER_GUIDE.md**
-   - Markdown version of the complete guide
-   - Suitable for GitHub, GitLab, or Confluence
-   - Can be converted to PDF using tools like Pandoc
-   - Complete 7-step walkthrough
-
-3. **IMAGE_MASKING_GUIDE.md**
-   - Reference guide showing which images contain sensitive information
-   - Instructions for masking email addresses in screenshots
-   - Recommended replacement values for masking
-
-4. **README.md** (this file)
-   - Overview of the entire guide package
-   - Instructions for use and deployment
-
-## 🎯 Quick Start
-
-**For End Users:**
-1. Open `CRES_USER_GUIDE.html` in your web browser
-2. Follow the 7 simple steps to read your encrypted email
-3. Check the troubleshooting section if you need help
-
-**For Documentation Teams:**
-1. Use `CRES_USER_GUIDE.md` to post on your internal wiki/intranet
-2. Customize the guide with your organization's support contact information
-3. Use `CRES_USER_GUIDE.html` for web-based documentation portals
-
-## 📱 Viewing Options
-
-### Option 1: HTML Guide (Recommended)
-```bash
-# Simply open in browser
-open CRES_USER_GUIDE.html
-```
-Or drag and drop the file into your web browser.
-
-### Option 2: Markdown Guide
-View on GitHub, GitLab, Confluence, or any markdown viewer.
-
-### Option 3: Convert to PDF
-Using Pandoc:
-```bash
-pandoc CRES_USER_GUIDE.md -o CRES_USER_GUIDE.pdf
-```
-
-## 📸 Working with Screenshots
-
-The guide references the 9 original screenshots (01.jpg - 09.jpg) showing the complete CRES workflow.
-
-**To use with masked images:**
-1. Review `IMAGE_MASKING_GUIDE.md` for which images need masking
-2. Use any image editor to mask sensitive email addresses:
-   - **Option A:** Manual masking with Photoshop, GIMP, or online tools
-   - **Option B:** Python script with Pillow library
-   - **Option C:** Online privacy tools
-
-**Email addresses to mask:**
-- `leftycoffee50@gmail.com` → `user@example.com` or `[USER_EMAIL]`
-- `ketcheon@cisco.com` → `sender@example.com` or `[SENDER_EMAIL]`
-
-## 📖 Guide Structure
-
-The complete guide covers 7 steps:
-
-```
-Step 1: Receive a Secure Email Notification
-   ↓
-Step 2: Login or Register
-   ↓
-Step 3: New User Registration (if needed)
-   ↓
-Step 4: Account Activation Confirmation
-   ↓
-Step 5: Open Account Activation Email
-   ↓
-Step 6: Confirm Email Address
-   ↓
-Step 7: Access Your Encrypted Email
-```
-
-## 🔒 Key Features
-
-- ✅ Complete 7-step workflow
-- ✅ Security best practices highlighted
-- ✅ Comprehensive troubleshooting section
-- ✅ FAQ format for quick answers
-- ✅ Password requirements clearly stated
-- ✅ Mobile access instructions
-- ✅ Professional styling and layout
-- ✅ Printable format
-
-## 🛠️ Customization
-
-To customize for your organization:
-
-1. **HTML Version:**
-   - Open `CRES_USER_GUIDE.html` in a text editor
-   - Replace "Cisco" with your company name (optional)
-   - Update contact information in the "Need Help?" section
-   - Modify colors in the `<style>` section if desired
-   - Save and use on your intranet
-
-2. **Markdown Version:**
-   - Edit `CRES_USER_GUIDE.md` directly
-   - Add your organization's support contact details
-   - Update any company-specific information
-   - Commit to your repository
-
-## 📋 Deployment Options
-
-### Option 1: GitHub Pages
-1. Push files to GitHub repository
-2. Enable GitHub Pages in repository settings
-3. Access guide at `https://your-org.github.io/repo-name/`
-
-### Option 2: Internal Wiki
-1. Export HTML or convert to PDF
-2. Upload to your internal wiki (Confluence, MediaWiki, etc.)
-3. Share the URL with your organization
-
-### Option 3: Email/Portal
-1. Export to PDF using Pandoc
-2. Attach to welcome emails
-3. Post on employee portals
-4. Include in onboarding materials
-
-### Option 4: Print
-1. Open HTML in browser
-2. Print to PDF (Cmd+P → Save as PDF)
-3. Print physical copies for office bulletin boards
-
-## 🐛 Troubleshooting Common Issues
-
-**Message link expired:** Contact sender for a new link
-
-**Not registered:** Click "Register" to create an account
-
-**Email not received:** Check junk/spam folder
-
-**Mobile display issues:** Forward to mobile@res.cisco.com
-
-**Forgot password:** Click "Forgot password?" on login page
-
-See `CRES_USER_GUIDE.html` or `CRES_USER_GUIDE.md` for detailed troubleshooting.
-
-## 📝 Notes
-
-- Original screenshots: 01.jpg through 09.jpg
-- All email addresses in original screenshots should be masked before sharing publicly
-- Guide is current as of 2025
-- Compatible with CRES (Cisco Secure Email Encryption Service)
-
-## 📄 License
-
-This documentation is provided as-is for users of Cisco Secure Email Encryption Service.
-Cisco Systems, Inc. © 2011-2025. All rights reserved.
-
-## ✅ Checklist for Implementation
-
-- [ ] Review both HTML and Markdown versions
-- [ ] Mask sensitive email addresses in screenshots if using images
-- [ ] Customize support contact information (if needed)
-- [ ] Choose deployment method (GitHub, Wiki, Email, etc.)
-- [ ] Test HTML guide in multiple browsers
-- [ ] Share with your organization
-- [ ] Collect feedback and update as needed
+## How to Read Encrypted Emails
 
 ---
 
-**Ready to use?** Start with `CRES_USER_GUIDE.html` - it's the most user-friendly format!
+## Overview
 
-For questions or to provide feedback, contact your IT/Documentation team.
+Cisco Secure Email Encryption Service (CRES) provides secure, encrypted email communication. This guide walks you through accessing and reading your encrypted emails.
+
+---
+
+## Step 1: Receive a Secure Email Notification
+
+When someone sends you an encrypted email, you will receive a notification email containing:
+- A **secure message indicator** with an envelope and lock icon
+- The message: **"This is a secure message"**
+- An **expiration date and time** for the message link
+- A blue **"Read Message"** button
+
+![Secure Message Notification](01.jpg)
+*Figure 1: Secure message notification email with Read Message button*
+
+**Important:** The link to open the encrypted message is time-limited. Make sure to open it before the expiration time displayed.
+
+### What to Do:
+- Open the notification email in your inbox
+- Click the **"Read Message"** button to proceed
+
+---
+
+## Step 2: First-Time Access - Login or Register
+
+### If You Already Have a CRES Account:
+
+1. Click the **"Read Message"** button
+2. You will be taken to the Secure Email Encryption Service login page
+3. Enter your registered email address in the **Username** field
+4. Enter your password
+5. Click **"Log in"**
+6. You can also use **"Log in with SSO"** if your organization supports single sign-on
+
+![Login Page](02.jpg)
+*Figure 2: CRES login page with username and password fields*
+
+### If You Are New to CRES:
+
+1. Click the **"Read Message"** button
+2. You will see a login page with your recipient email address pre-filled
+3. Look for **"Email address not listed"** link if you need to use a different email
+4. Click **"Log in"** and you will receive an error: **"You are not registered"**
+
+![Not Registered Error](03.jpg)
+*Figure 2b: Error message when account doesn't exist yet*
+
+5. Click the **"Register"** button to create a new account
+
+---
+
+## Step 3: New User Registration
+
+If this is your first time accessing CRES, you must register:
+
+### Enter Personal Information:
+
+1. **Email Address** - Your recipient email address (pre-filled)
+2. **First Name** - Enter your first name
+3. **Last Name** - Enter your last name
+
+### Create a Password:
+
+The password must meet these requirements:
+- ✅ Must contain at least **one alphabet character**
+- ✅ Must contain at least **one number**
+- ✅ Length must be between **8 and 40 characters**
+
+![Registration Form](04.jpg)
+*Figure 3: New user registration form with password requirements*
+
+### Important Security Note:
+Enter your password in both the **"Current Password"** and **"Confirm Password"** fields to ensure they match.
+
+### Complete Registration:
+
+1. Check the checkbox: **"I agree to Cisco Secure Email Encryption Service's Terms of Service"**
+2. Click the **"Register"** button
+
+---
+
+## Step 4: Account Activation
+
+After successful registration, you will see:
+
+**"Final Step: Account Activation"**
+
+A confirmation message will appear stating:
+- Your Cisco Secure Email Encryption Service account was successfully created
+- Instructions to activate your account have been emailed to **[YOUR_EMAIL_ADDRESS]**
+
+![Account Activation Confirmation](05.jpg)
+*Figure 4: Account activation confirmation page*
+
+### Next Action:
+
+1. Check your email inbox for an **"Account Activation"** email from CRES
+2. If you don't see it, check your **junk** or **spam** folder
+
+---
+
+## Step 5: Verify Account Activation Email
+
+You will receive an email from **CRES Do Not Reply** `<DoNotReply@res.cisco.com>` with:
+
+- A **green checkmark** icon and **"Account Activation"** header
+- The message: **"Dear [Your Name],"**
+- **"Thank you for registering with Cisco Secure Email Encryption Service."**
+- A blue **"Activate Account"** button
+
+![Account Activation Email](06.jpg)
+*Figure 5: Account activation email from CRES with Activate Account button*
+
+### Important Security Notice:
+**"To help keep your personal information safe, Cisco recommends that you never give your CRES password to anyone, including Cisco employees."**
+
+### What to Do:
+
+1. Open the activation email
+2. Click the **"Activate Account"** button
+
+---
+
+## Step 6: Confirm Email Address
+
+After clicking "Activate Account," you will see:
+
+**"Email address confirmed"**
+
+The confirmation page states:
+- You have successfully completed the registration with the Secure Email Encryption Service
+- You can now **return to your inbox**
+- **Reopen the secure message** and enter your credentials to view it
+
+![Email Confirmed](07.jpg)
+*Figure 6: Email address confirmation success page*
+
+---
+
+## Step 7: Access Your Encrypted Email
+
+Now that your account is activated:
+
+1. **Return to the original encrypted email notification** in your inbox
+2. Click the **"Read Message"** button again
+3. Enter your **username (email address)** and **password**
+4. Click **"Log in"**
+5. Your encrypted message will now be displayed
+
+![Encrypted Email View - Login](08.jpg)
+*Figure 7a: Successfully logged in - entering credentials*
+
+### Your Encrypted Message
+
+Once logged in, you'll see the complete encrypted email with:
+- **Sender information** with their name and email
+- **Date and time** the message was sent
+- **Subject line** of the message
+- **Full message content** decrypted and readable
+
+![Encrypted Email - Full Message](09.jpg)
+*Figure 7b: Complete encrypted email with message content displayed*
+
+---
+
+## Accessing Encrypted Emails After Registration
+
+For all future encrypted emails:
+
+1. Click the **"Read Message"** button in the notification
+2. Log in with your email address and CRES password
+3. Read the encrypted message in the secure portal
+
+---
+
+## Troubleshooting
+
+### Message Link Expired
+**Problem:** The link in the notification email has expired
+
+**Solution:** 
+- Contact the sender directly to request a new encrypted email
+- Request a new message link if the expiration time has passed
+
+### Email Not Displaying Correctly on Mobile
+**Problem:** The encrypted email doesn't display properly on your mobile device
+
+**Solution:**
+- Forward the notification email to: **`mobile@res.cisco.com`**
+- An alternative format will be sent to help you access it on mobile
+
+### Password Issues
+- If you forgot your password, click **"Forgot password?"** on the login page
+- Reset instructions will be sent to your registered email address
+
+### Account Not Found
+**Problem:** Error message says **"Email address not listed"**
+
+**Solution:**
+- Ensure you're using the correct email address that the sender used
+- Click **"Email address not listed"** to try a different email address
+- If still having issues, create a new account or contact support
+
+### Can't Find Activation Email
+**Problem:** Didn't receive the account activation email
+
+**Solution:**
+1. Check your **junk** or **spam** folder
+2. Check if you entered the correct email address during registration
+3. Wait a few minutes and refresh your inbox
+4. Contact your IT department or CRES support
+
+---
+
+## Important Security Reminders
+
+🔒 **Never share your CRES password** with anyone, including:
+- Cisco employees
+- IT support staff
+- Other colleagues
+
+🔒 **Secure message links are time-limited** - Always open encrypted emails before the expiration time
+
+🔒 **Register only once** - Your account persists across encrypted email messages
+
+---
+
+## Need Help?
+
+- **Contact the sender directly** if you have questions about the encrypted message
+- **About Secure Email Encryption Service** - Links to Terms of Service and Privacy Policy are available in the footer of the CRES portal
+- **Customer support** - Look for the "Customer support" link in the CRES interface for additional assistance
+
+---
+
+**Copyright © 2011-2025 Cisco Systems, Inc. and/or its affiliates. All rights reserved.**
