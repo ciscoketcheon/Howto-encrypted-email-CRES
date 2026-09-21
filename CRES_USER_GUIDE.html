@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco CRES - How to Read Encrypted Emails</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .step {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .step h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .step ol, .step ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .step li {
+            margin-bottom: 8px;
+        }
+
+        .requirement {
+            background: #e8f4f8;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+
+        .requirement strong {
+            color: #17a2b8;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+            color: #155724;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+            color: #856404;
+        }
+
+        .security-note {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+            color: #721c24;
+        }
+
+        .security-note strong {
+            color: #721c24;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .faq {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .faq-q {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .faq-a {
+            color: #333;
+            margin-left: 20px;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .icon {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding: 8px 0;
+        }
+
+        .checklist li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔒 Cisco Secure Email Encryption Service</h1>
+            <p>How to Read Your Encrypted Emails</p>
+        </header>
+
+        <div class="content">
+            <!-- Overview -->
+            <div class="section">
+                <h2>Overview</h2>
+                <p>Cisco Secure Email Encryption Service (CRES) provides secure, encrypted email communication. This guide walks you through accessing and reading your encrypted emails in just 7 simple steps.</p>
+                <div class="success">
+                    <strong>✓ Secure:</strong> Your encrypted messages are protected with industry-standard encryption.
+                </div>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="section">
+                <div class="step">
+                    <h3><span class="step-number">1</span>Receive a Secure Email Notification</h3>
+                    <p>When someone sends you an encrypted email, you will receive a notification email containing:</p>
+                    <ul>
+                        <li>A secure message indicator with an envelope and lock icon</li>
+                        <li>The message: <strong>"This is a secure message"</strong></li>
+                        <li>An expiration date and time for the message link</li>
+                        <li>A blue <strong>"Read Message"</strong> button</li>
+                    </ul>
+                    <div class="warning">
+                        <strong>⏰ Important:</strong> The link to open the encrypted message is time-limited. Open it before the expiration time displayed.
+                    </div>
+                    <p><strong>What to Do:</strong> Open the notification email in your inbox and click the <strong>"Read Message"</strong> button.</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="section">
+                <div class="step">
+                    <h3><span class="step-number">2</span>Login or Register</h3>
+                    <p>You will be taken to the Secure Email Encryption Service login page.</p>
+
+                    <h4 style="margin-top: 15px; color: #667eea;">Already Have an Account?</h4>
+                    <ol>
+                        <li>Enter your registered email address in the <strong>Username</strong> field</li>
+                        <li>Enter your password</li>
+                        <li>Click <strong>"Log in"</strong></li>
+                        <li><em>Optional:</em> Use <strong>"Log in with SSO"</strong> if your organization supports single sign-on</li>
+                    </ol>
+
+                    <h4 style="margin-top: 15px; color: #667eea;">First Time?</h4>
+                    <p>If you see an error message saying <strong>"You are not registered"</strong>, click the <strong>"Register"</strong> button to create a new account.</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="section">
+                <div class="step">
+                    <h3><span class="step-number">3</span>New User Registration</h3>
+                    <p>Complete the registration form with the following information:</p>
+
+                    <h4 style="margin-top: 15px; color: #667eea;">Personal Information</h4>
+                    <ul>
+                        <li><strong>Email Address:</strong> Your recipient email address</li>
+                        <li><strong>First Name:</strong> Your first name</li>
+                        <li><strong>Last Name:</strong> Your last name</li>
+                    </ul>
+
+                    <h4 style="margin-top: 15px; color: #667eea;">Create a Password</h4>
+                    <p>Your password must meet these requirements:</p>
+                    <ul class="checklist">
+                        <li>At least one alphabet character</li>
+                        <li>At least one number</li>
+                        <li>Between 8 and 40 characters in length</li>
+                    </ul>
+
+                    <div class="requirement">
+                        <strong>Important:</strong> Enter your password in both the "Current Password" and "Confirm Password" fields to ensure they match.
+                    </div>
+
+                    <h4 style="margin-top: 15px; color: #667eea;">Complete Registration</h4>
+                    <ol>
+                        <li>Check the checkbox: <strong>"I agree to Cisco Secure Email Encryption Service's Terms of Service"</strong></li>
+                        <li>Click the <strong>"Register"</strong> button</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="section">
+                <div class="step">
+                    <h3><span class="step-number">4</span>Account Activation Confirmation</h3>
+                    <p>After successful registration, you will see a confirmation page stating:</p>
+                    <blockquote style="margin: 15px 0 15px 20px; padding-left: 15px; border-left: 3px solid #667eea;">
+                        <strong>"Final Step: Account Activation"</strong><br>
+                        Your Cisco Secure Email Encryption Service account was successfully created. Instructions to activate your account have been emailed to your email address.
+                    </blockquote>
+                    <p><strong>Next Action:</strong> Check your email inbox for an <strong>"Account Activation"</strong> email from CRES. If you don't see it, check your junk or spam folder.</p>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="section">
+                <div class="step">
+                    <h3><span class="step-number">5</span>Open Account Activation Email</h3>
+                    <p>You will receive an email from:</p>
+                    <blockquote style="margin: 15px 0 15px 20px; padding-left: 15px; border-left: 3px solid #28a745;">
+                        <strong>CRES Do Not Reply</strong> &lt;DoNotReply@res.cisco.com&gt;
+                    </blockquote>
+
+                    <p>The email will contain:</p>
+                    <ul>
+                        <li>A green checkmark icon with <strong>"Account Activation"</strong> header</li>
+                        <li>A message thanking you for registering</li>
+                        <li>A blue <strong>"Activate Account"</strong> button</li>
+                    </ul>
+
+                    <div class="security-note">
+                        <strong>🔒 Security Reminder:</strong> Cisco recommends that you never give your CRES password to anyone, including Cisco employees.
+                    </div>
+
+                    <p><strong>What to Do:</strong> Open the activation email and click the <strong>"Activate Account"</strong> button.</p>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="section">
+                <div class="step">
+                    <h3><span class="step-number">6</span>Confirm Email Address</h3>
+                    <p>After clicking "Activate Account," you will see a confirmation page stating:</p>
+                    <blockquote style="margin: 15px 0 15px 20px; padding-left: 15px; border-left: 3px solid #28a745;">
+                        <strong>✓ Email address confirmed</strong><br>
+                        You have successfully completed the registration with the Secure Email Encryption Service.
+                    </blockquote>
+
+                    <p>You can now:</p>
+                    <ul>
+                        <li>Return to your inbox</li>
+                        <li>Reopen the secure message</li>
+                        <li>Enter your credentials to view it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="section">
+                <div class="step">
+                    <h3><span class="step-number">7</span>Access Your Encrypted Email</h3>
+                    <p>Now that your account is activated, you can read your encrypted email:</p>
+                    <ol>
+                        <li>Return to the original encrypted email notification in your inbox</li>
+                        <li>Click the <strong>"Read Message"</strong> button</li>
+                        <li>Enter your username (email address) and password</li>
+                        <li>Click <strong>"Log in"</strong></li>
+                        <li>Your encrypted message will now be displayed</li>
+                    </ol>
+
+                    <div class="success">
+                        <strong>✓ Success!</strong> For all future encrypted emails, simply log in with your email and password to read them.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="section">
+                <h2>Troubleshooting</h2>
+
+                <div class="faq">
+                    <div class="faq-q">❓ Message link has expired</div>
+                    <div class="faq-a">
+                        Contact the sender directly to request a new encrypted email or request a new message link if the expiration time has passed.
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="faq-q">❓ Email not displaying correctly on mobile</div>
+                    <div class="faq-a">
+                        Forward the notification email to: <strong>mobile@res.cisco.com</strong><br>
+                        An alternative format will be sent to help you access it on your mobile device.
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="faq-q">❓ Forgot your password?</div>
+                    <div class="faq-a">
+                        On the login page, click <strong>"Forgot password?"</strong><br>
+                        Reset instructions will be sent to your registered email address.
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="faq-q">❓ Email address not found</div>
+                    <div class="faq-a">
+                        Ensure you're using the correct email address that the sender used. Click <strong>"Email address not listed"</strong> to try a different email address. If you still have issues, create a new account or contact support.
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="faq-q">❓ Can't find activation email</div>
+                    <div class="faq-a">
+                        1. Check your junk or spam folder<br>
+                        2. Verify you entered the correct email address<br>
+                        3. Wait a few minutes and refresh your inbox<br>
+                        4. Contact your IT department or CRES support
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Tips -->
+            <div class="section">
+                <h2>🔒 Security Reminders</h2>
+
+                <div class="security-note">
+                    <strong>Never Share Your Password</strong><br>
+                    Do not share your CRES password with anyone, including:
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li>Cisco employees</li>
+                        <li>IT support staff</li>
+                        <li>Other colleagues</li>
+                    </ul>
+                </div>
+
+                <div class="warning">
+                    <strong>Message Links are Time-Limited</strong><br>
+                    Always open encrypted emails before the expiration time to ensure you don't lose access.
+                </div>
+
+                <div class="requirement">
+                    <strong>Register Only Once</strong><br>
+                    Your account persists across encrypted email messages. You don't need to register again for future emails.
+                </div>
+            </div>
+
+            <!-- Need Help -->
+            <div class="section">
+                <h2>Need Additional Help?</h2>
+                <ul>
+                    <li><strong>Questions about the message:</strong> Contact the sender directly</li>
+                    <li><strong>About CRES:</strong> Look for Terms of Service and Privacy Policy links in the CRES portal footer</li>
+                    <li><strong>Technical support:</strong> Find the "Customer support" link in the CRES interface for additional assistance</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            Copyright © 2011-2025 Cisco Systems, Inc. and/or its affiliates. All rights reserved.<br>
+            <strong>Version 1.0</strong> — Last Updated: 2025
+        </footer>
+    </div>
+</body>
+</html>
